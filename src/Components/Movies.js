@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Movie from "./Movie";
 import SearchBar from "material-ui-search-bar";
-
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -13,12 +13,10 @@ function Movies() {
 
     useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
-            setLoading(true)
-          console.log(searchWord)
+        setLoading(true)
           fetch(`http://www.omdbapi.com/?s=${searchWord}&page=5&type=movie&apikey=${apiKey}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data.Search);
                 setMovies(data.Search)
                 setLoading(false)
             })
@@ -38,6 +36,9 @@ function Movies() {
     return (
         <div>
             <section>
+                Type a movie
+            </section>
+            <section>
                 <SearchBar
                 value={searchWord}
                 onChange={(searchWord) => handleChange(searchWord)}
@@ -45,11 +46,12 @@ function Movies() {
                 />
             </section>
             <section>
-                {loading && <h3>Getting your movies...</h3>}
+                <p></p>
+                {loading && <CircularProgress />}
                 {movies && movies.map((movie) => {
                     return (
                         <div className="movies-main">
-                             <Movie key={movie.imdbID} movie={movie} />
+                            <Movie key={movie.imdbID} movie={movie} />
                         </div>
                     );
                 })}
