@@ -1,3 +1,11 @@
+This app is a movie finding app. The user is able to search for any movies they want. When the search is successfull they will see the movie poster, the release date, the movie type.
+
+Built with React, Material UI, React hooks.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
