@@ -2,7 +2,13 @@ This app is a movie finding app. The user is able to search for any movies they 
 
 Built with React, Material UI, React hooks.
 
+# Screenshots Below
 
+
+
+<img width="1042" alt="Screenshot 2021-06-11 at 19 15 26" src="https://user-images.githubusercontent.com/57858821/121731869-63790b80-cae9-11eb-869c-cce19a447c2d.png">
+<img width="1047" alt="Screenshot 2021-06-11 at 19 16 00" src="https://user-images.githubusercontent.com/57858821/121731938-78559f00-cae9-11eb-9278-0794f0a888d4.png">
+<img width="319" alt="Screenshot 2021-06-11 at 19 16 22" src="https://user-images.githubusercontent.com/57858821/121731972-84d9f780-cae9-11eb-8adb-35284bcfe812.png">
 
 
 
