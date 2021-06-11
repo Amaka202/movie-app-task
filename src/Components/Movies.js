@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Movie from "./Movie";
 import SearchBar from "material-ui-search-bar";
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Header from "./Header";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -35,27 +36,29 @@ function Movies() {
 
     return (
         <div>
+            <header>
+                <Header />
+            </header>
+           <main>
             <section>
-                Type a movie
-            </section>
-            <section>
-                <SearchBar
-                value={searchWord}
-                onChange={(searchWord) => handleChange(searchWord)}
-                onCancelSearch={() => cancelSearch()}
-                />
-            </section>
-            <section>
-                <p></p>
-                {loading && <CircularProgress />}
-                {movies && movies.map((movie) => {
-                    return (
-                        <div className="movies-main">
-                            <Movie key={movie.imdbID} movie={movie} />
-                        </div>
-                    );
-                })}
-            </section>
+                    <SearchBar
+                    value={searchWord}
+                    onChange={(searchWord) => handleChange(searchWord)}
+                    onCancelSearch={() => cancelSearch()}
+                    />
+                </section>
+                <section>
+                    {loading && <CircularProgress />}
+                    {movies && movies.map((movie) => {
+                        return (
+                            <div className="movies-main">
+                                <Movie key={movie.imdbID} movie={movie} />
+                            </div>
+                        );
+                    })}
+                </section>
+           </main>
+
         </div>
     )
       
